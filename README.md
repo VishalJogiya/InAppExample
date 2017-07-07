@@ -1,0 +1,2 @@
+# InAppExample
+This is just an sample for android developers to implements In app purchases.  This link includes code to implement purchases. Subscriptions and Consumptions are included.  Read more about this here  Hope you'll like it please feel free to contact. Buy Subscriptions for me. Weekly : Thank's for creating this project, here's a coffee (or some beer) for you! monthly : Wow, I am stunned. Let me take you to the movies! Yearly : I really appreciate your work, let's grab some lunch! Consumption : That's some awesome stuff you did right there, dinner is on me!
