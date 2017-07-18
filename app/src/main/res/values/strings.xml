@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">In App Purchases Sample</string>
+    <string name="monthly">Monthly</string>
+    <string name="purchase_type">Purchase Type</string>
+    <string name="subscription_date">Subscription Date</string>
+    <string name="yearly">yearly</string>
+    <string name="contact_support">Contact Support</string>
+    <string name="help">Help</string>
+    <string name="about">About Us</string>
+    <string name="send_via">Send Via</string>
+    <string name="contact_supoort_subject">Purchase issue: My App Name</string>
+    <string name="ok_btn">OK</string>
+    <string name="price">Price</string>
+    <string name="thank_you_meassge">Thank you for Purchasing</string>
+    <string name="purchase">Purchase</string>
+    <string name="processing">Processing…</string>
+    <string name="per_year">/yr</string>
+    <string name="yearly_package">Yearly Package!</string>
+    <string name="monthly_package">Monthly Package</string>
+    <string name="per_month">/mon</string>
+    <string name="quarterly_package">3 Months Package</string>
+    <string name="six_months_package">6 Months Package</string>
+    <string name="faq">FAQ\'s</string>
+    <string name="pruchase_issue">Purchase Issue</string>
+    <string name="failed_to_purchase">Failed To Subscribe</string>
+    <string name="select">Select App</string>
+    <string name="consumption">Consumption Packge</string>
+    <string name="weekly_purchase">Weekly Purchase</string>
+    <string name="great_job1">You are the man! This project saved me hours (if not days) of struggle and hard work, simply awesome!.☺☺</string>
+    <string name="great_job2">That is some awesome stuff you did right there, dinner is on me!☺☺</string>
+    <string name="great_job3" >I really appreciate your work, let\'s grab some lunch! ☺☺</string>
+    <string name="great_job4">Wow, I am stunned. Let me take you to the movies!☺☺</string>
+    <string name="great_job5">Thank\'s for creating this project, here\'s a coffee (or some beer) for you!☺☺</string>
+    <string name="great_job6">I really want to support this project, great job!☺☺</string>
 </resources>
