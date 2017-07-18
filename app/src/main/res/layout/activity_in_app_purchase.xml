@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="InAppPurchaseActivity">
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/app_bar_in_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:elevation="@dimen/sixteen_dp"
+        app:theme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <View
+        android:id="@+id/shadowline_in_app"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@drawable/shadow" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+
+                android:id="@+id/purchase_type_LL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray"
+                android:orientation="vertical"
+                android:padding="@dimen/six_dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/purchase_type_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/eight_dp"
+                    android:text="@string/purchase_type"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fourteen_sp" />
+
+                <TextView
+                    android:id="@+id/subscription_date_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/eight_dp"
+                    android:text="@string/subscription_date"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fourteen_sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line_color" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:src="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:text="@string/app_name"
+                    android:textColor="@color/blue"
+                    android:textSize="@dimen/twenty_four_sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/four_dp"
+                        android:text="@string/yearly_package"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/eighteen_sp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/four_dp"
+                        android:text="@string/great_job1"
+                        android:textSize="@dimen/fourteen_sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/purchase_yearly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:background="@drawable/buy_now_button"
+                    android:paddingBottom="@dimen/eight_dp"
+                    android:paddingLeft="@dimen/twenty_four_dp"
+                    android:paddingRight="@dimen/twenty_four_dp"
+                    android:paddingTop="@dimen/eight_dp"
+                    android:text="Buy"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fourteen_sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/six_months_package"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/eighteen_sp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/great_job2"
+                        android:textSize="@dimen/fourteen_sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/purchase_six_months"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:background="@drawable/buy_now_button"
+                    android:paddingBottom="@dimen/eight_dp"
+                    android:paddingLeft="@dimen/twenty_four_dp"
+                    android:paddingRight="@dimen/twenty_four_dp"
+                    android:paddingTop="@dimen/eight_dp"
+                    android:text="Buy"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fourteen_sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line_color" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/quarterly_package"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/eighteen_sp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/great_job3"
+                        android:textSize="@dimen/fourteen_sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/purchase_quarterly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:background="@drawable/buy_now_button"
+                    android:paddingBottom="@dimen/eight_dp"
+                    android:paddingLeft="@dimen/twenty_four_dp"
+                    android:paddingRight="@dimen/twenty_four_dp"
+                    android:paddingTop="@dimen/eight_dp"
+                    android:text="Buy"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fourteen_sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line_color" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/monthly_package"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/eighteen_sp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/great_job4"
+                        android:textSize="@dimen/fourteen_sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/purchase_monthly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:background="@drawable/buy_now_button"
+                    android:paddingBottom="@dimen/eight_dp"
+                    android:paddingLeft="@dimen/twenty_four_dp"
+                    android:paddingRight="@dimen/twenty_four_dp"
+                    android:paddingTop="@dimen/eight_dp"
+                    android:text="Buy"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fourteen_sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/weekly_purchase"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/eighteen_sp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/great_job5"
+                        android:textSize="@dimen/fourteen_sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/purchase_weekly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:background="@drawable/buy_now_button"
+                    android:paddingBottom="@dimen/eight_dp"
+                    android:paddingLeft="@dimen/twenty_four_dp"
+                    android:paddingRight="@dimen/twenty_four_dp"
+                    android:paddingTop="@dimen/eight_dp"
+                    android:text="Buy"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fourteen_sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/consumption"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/eighteen_sp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/great_job6"
+                        android:textSize="@dimen/fourteen_sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/purchase_consumption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:background="@drawable/buy_now_button"
+                    android:paddingBottom="@dimen/eight_dp"
+                    android:paddingLeft="@dimen/twenty_four_dp"
+                    android:paddingRight="@dimen/twenty_four_dp"
+                    android:paddingTop="@dimen/eight_dp"
+                    android:text="Buy"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fourteen_sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line_color" />
+
+
+            <TextView
+                android:id="@+id/faq"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/sixteen_dp"
+                android:text="@string/faq"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/eighteen_sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line_color" />
+
+            <TextView
+                android:id="@+id/contact_support"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/sixteen_dp"
+                android:text="@string/contact_support"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/eighteen_sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line_color" />
+
+            <TextView
+                android:id="@+id/help"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/sixteen_dp"
+                android:text="@string/help"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/eighteen_sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/line_color" />
+
+
+            <!--YOU CAN REMOVE THESE BUTTONS IF IMPLEMENTING PURCHASES-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sixteen_dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/sku_details"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/buy_now_button"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/eight_dp"
+                    android:paddingLeft="@dimen/twenty_four_dp"
+                    android:paddingRight="@dimen/twenty_four_dp"
+                    android:paddingTop="@dimen/eight_dp"
+                    android:text="SKU Details"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fourteen_sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/query_purchases"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/buy_now_button"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/eight_dp"
+                    android:paddingLeft="@dimen/tweleve_dp"
+                    android:paddingRight="@dimen/ten_dp"
+                    android:paddingTop="@dimen/eight_dp"
+                    android:text="Query Purchases"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fourteen_sp"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/query_purchases2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/eight_dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/buy_now_button"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/eight_dp"
+                    android:paddingLeft="@dimen/tweleve_dp"
+                    android:paddingRight="@dimen/tweleve_dp"
+                    android:paddingTop="@dimen/eight_dp"
+                    android:text="Query Purchases 2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fourteen_sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Logs:"
+                android:layout_marginLeft="@dimen/sixteen_dp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sixteen_sp" />
+
+            <TextView
+                android:id="@+id/logs_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/sixteen_dp"
+                android:text="logs:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sixteen_sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
