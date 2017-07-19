@@ -1,2 +1,18 @@
-# InAppExample
-This is just an sample for android developers to implements In app purchases.  This link includes code to implement purchases. Subscriptions and Consumptions are included.  Read more about this here  Hope you'll like it please feel free to contact. Buy Subscriptions for me. Weekly : Thank's for creating this project, here's a coffee (or some beer) for you! monthly : Wow, I am stunned. Let me take you to the movies! Yearly : I really appreciate your work, let's grab some lunch! Consumption : That's some awesome stuff you did right there, dinner is on me!
+This is just an sample for android developers to implements In app purchases.
+
+Subscriptions and Consumptions are included.
+
+Read more about this here
+this link includes code to implement purchases.
+
+Hope you'll like it.
+
+Please contribute, help improving code will be appriciated.
+
+Thanks 
+
+SRC: https://developer.android.com/google/play/billing/billing_integrate.html#billing-service
+
+Demo App: https://play.google.com/store/apps/details?id=vjs.inapppurchasessample
+
+Code Available at Github: https://github.com/VishalJogiya/InAppExample/tree/master
