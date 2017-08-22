@@ -2,9 +2,6 @@ This is just an sample for android developers to implements In app purchases.
 
 Subscriptions and Consumptions are included.
 
-Read more about this here
-this link includes code to implement purchases.
-
 Hope you'll like it.
 
 Please contribute, help improving code will be appriciated.
