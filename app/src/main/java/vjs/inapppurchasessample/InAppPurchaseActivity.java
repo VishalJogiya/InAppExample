@@ -81,8 +81,7 @@ public class InAppPurchaseActivity extends AppCompatActivity implements View.OnC
     //Query Inventory
     IabHelper.QueryInventoryFinishedListener mGotInventoryListener
             = new IabHelper.QueryInventoryFinishedListener() {
-        public void onQueryInventoryFinished(IabResult result,
-                                             Inventory inventory) {
+        public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
 
             if (result.isFailure()) {
                 // handle error here
@@ -114,19 +113,19 @@ public class InAppPurchaseActivity extends AppCompatActivity implements View.OnC
 
 
                 // does the user have the premium upgrade?
-                Log.d(TAG, "onPurchase: " + YEARLY_PRODUCT_ID + " " + hasMonthlyPurchased
+                Log.d(TAG, "QueryInventoryFinishedListener onPurchase: " + YEARLY_PRODUCT_ID + " " + hasMonthlyPurchased
                         + "\n" + MONTHLY_PRODUCT_ID + " " + hasYearlyPurchased
                         + "\n" + HALF_YEARLY_PRODUCT_ID + " " + hasYearlyPurchased
                         + "\n" + QUARTERLY_PRODUCT_ID + " " + hasYearlyPurchased
                         + "\n" + WEEKLY_PRODUCT_ID + " " + hasYearlyPurchased
-                        + "\n" + CONSUMPTION_PRODUCT_ID + " " + hasYearlyPurchased );
+                        + "\n" + CONSUMPTION_PRODUCT_ID + " " + hasYearlyPurchased);
 
-                logsTextView.setText("\n" + logsTextView.getText().toString() +   "\n" +  YEARLY_PRODUCT_ID + " " + hasMonthlyPurchased + "\n"
+                logsTextView.setText("\n" + logsTextView.getText().toString() + "\n" + YEARLY_PRODUCT_ID + " " + hasMonthlyPurchased + "\n"
                         + "\n" + MONTHLY_PRODUCT_ID + " " + hasYearlyPurchased
                         + "\n" + HALF_YEARLY_PRODUCT_ID + " " + hasYearlyPurchased
                         + "\n" + QUARTERLY_PRODUCT_ID + " " + hasYearlyPurchased
                         + "\n" + WEEKLY_PRODUCT_ID + " " + hasYearlyPurchased
-                        + "\n" + CONSUMPTION_PRODUCT_ID + " " + hasYearlyPurchased );
+                        + "\n" + CONSUMPTION_PRODUCT_ID + " " + hasYearlyPurchased);
 
                 updatePurchaseUi();
 
@@ -137,7 +136,9 @@ public class InAppPurchaseActivity extends AppCompatActivity implements View.OnC
             }
         }
     };
+
     private TextView logsTextView;
+    private TextView queryPurchases;
 
 
     @Override
@@ -157,6 +158,7 @@ public class InAppPurchaseActivity extends AppCompatActivity implements View.OnC
         ((TextView) findViewById(R.id.faq)).setOnClickListener(this);
         ((TextView) findViewById(R.id.contact_support)).setOnClickListener(this);
         ((TextView) findViewById(R.id.help)).setOnClickListener(this);
+        ((TextView) findViewById(R.id.clear_logs)).setOnClickListener(this);
 
 
         logsTextView = (TextView) findViewById(R.id.logs_text_view);
@@ -172,6 +174,7 @@ public class InAppPurchaseActivity extends AppCompatActivity implements View.OnC
         purchaseConsumption = (TextView) findViewById(R.id.purchase_consumption);
 
         purchaseTypeLayout = (LinearLayout) findViewById(R.id.purchase_type_LL);
+        queryPurchases = (TextView) findViewById(R.id.query_purchases2);
 
 
         purchaseYearlyButton.setOnClickListener(this);
@@ -180,6 +183,7 @@ public class InAppPurchaseActivity extends AppCompatActivity implements View.OnC
         purchaseMonthlyButton.setOnClickListener(this);
         purchsaeWeeklyButton.setOnClickListener(this);
         purchaseConsumption.setOnClickListener(this);
+        queryPurchases.setOnClickListener(this);
 
         progress = new ProgressDialog(InAppPurchaseActivity.this);
         progress.setMessage(getString(R.string.processing));
@@ -199,7 +203,7 @@ public class InAppPurchaseActivity extends AppCompatActivity implements View.OnC
             public void onIabSetupFinished(IabResult result) {
                 if (result.isSuccess()) {
                     try {
-                        onClick(((TextView) findViewById(R.id.query_purchases2)));
+                        onClick(queryPurchases);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -234,20 +238,20 @@ public class InAppPurchaseActivity extends AppCompatActivity implements View.OnC
                 subsDate += ": <font color='#1597FF'> " + getFormatedDate(inventory.getPurchase(YEARLY_PRODUCT_ID).getPurchaseTime()) + "</font>";
             }
             if (hasWeeklyPurhcases) {
-                purchaseType += ": <font color='#1597FF'> " + getString(R.string.yearly) + " </font>";
-                subsDate += ": <font color='#1597FF'> " + getFormatedDate(inventory.getPurchase(YEARLY_PRODUCT_ID).getPurchaseTime()) + "</font>";
+                purchaseType += ": <font color='#1597FF'> " + getString(R.string.weekly_purchase) + " </font>";
+                subsDate += ": <font color='#1597FF'> " + getFormatedDate(inventory.getPurchase(WEEKLY_PRODUCT_ID).getPurchaseTime()) + "</font>";
             }
             if (hasQuarterlyPurchased) {
-                purchaseType += ": <font color='#1597FF'> " + getString(R.string.yearly) + " </font>";
-                subsDate += ": <font color='#1597FF'> " + getFormatedDate(inventory.getPurchase(YEARLY_PRODUCT_ID).getPurchaseTime()) + "</font>";
+                purchaseType += ": <font color='#1597FF'> " + getString(R.string.quarterly_package) + " </font>";
+                subsDate += ": <font color='#1597FF'> " + getFormatedDate(inventory.getPurchase(QUARTERLY_PRODUCT_ID).getPurchaseTime()) + "</font>";
             }
             if (hasHalfYearlyPurchased) {
-                purchaseType += ": <font color='#1597FF'> " + getString(R.string.yearly) + " </font>";
-                subsDate += ": <font color='#1597FF'> " + getFormatedDate(inventory.getPurchase(YEARLY_PRODUCT_ID).getPurchaseTime()) + "</font>";
+                purchaseType += ": <font color='#1597FF'> " + getString(R.string.six_months_package) + " </font>";
+                subsDate += ": <font color='#1597FF'> " + getFormatedDate(inventory.getPurchase(HALF_YEARLY_PRODUCT_ID).getPurchaseTime()) + "</font>";
             }
             if (hasConsumptionPurchased) {
-                purchaseType += ": <font color='#1597FF'> " + getString(R.string.yearly) + " </font>";
-                subsDate += ": <font color='#1597FF'> " + getFormatedDate(inventory.getPurchase(YEARLY_PRODUCT_ID).getPurchaseTime()) + "</font>";
+                purchaseType += ": <font color='#1597FF'> " + getString(R.string.consumption) + " </font>";
+                subsDate += ": <font color='#1597FF'> " + getFormatedDate(inventory.getPurchase(CONSUMPTION_PRODUCT_ID).getPurchaseTime()) + "</font>";
             }
             purchaseTypeTextView.setText(Html.fromHtml(purchaseType), TextView.BufferType.SPANNABLE);
             subscriptionDateTextView.setText(Html.fromHtml(subsDate), TextView.BufferType.SPANNABLE);
@@ -392,18 +396,15 @@ public class InAppPurchaseActivity extends AppCompatActivity implements View.OnC
                 QueryPurchases2();
                 break;*/
             case R.id.query_purchases2:
-                try
-
-                {
+                try {
                     mHelper.queryInventoryAsync(mGotInventoryListener);
-                } catch (
-                        IabHelper.IabAsyncInProgressException e)
-
-                {
+                } catch (IabHelper.IabAsyncInProgressException e) {
                     e.printStackTrace();
                 }
                 break;
 
+            case R.id.clear_logs:
+                logsTextView.setText("");
 
         }
     }
@@ -443,7 +444,7 @@ public class InAppPurchaseActivity extends AppCompatActivity implements View.OnC
                     long purchaseTime = jo.getLong("purchaseTime");
 
                     Log.d(TAG, "onPurchase onActivityResult: " + jo.toString());
-                    logsTextView.setText("\n" + logsTextView.getText().toString() +   "\n" +  "onPurchase onActivityResult: " + jo.toString());
+                    logsTextView.setText("\n" + logsTextView.getText().toString() + "\n" + "onPurchase onActivityResult: " + jo.toString());
 
 
                     purchaseTypeLayout.setVisibility(View.VISIBLE);
@@ -486,8 +487,6 @@ public class InAppPurchaseActivity extends AppCompatActivity implements View.OnC
             }
         }
     }
-
-
 
 
     private void querySkuDetails() {
@@ -598,7 +597,7 @@ public class InAppPurchaseActivity extends AppCompatActivity implements View.OnC
                 purchsaeWeeklyButton.setText(result[4]);
                 purchaseConsumption.setText(result[5]);
 
-                Log.d(TAG, "thenDoUiRelatedWork: Result " +   "\n" +
+                Log.d(TAG, "thenDoUiRelatedWork: Result " + "\n" +
                         "Yearly  = " + result[0] + "\n" +
                         " 6 Months  = " + result[1] + "\n" +
                         " 3 Months  = " + result[2] + "\n" +
@@ -606,7 +605,7 @@ public class InAppPurchaseActivity extends AppCompatActivity implements View.OnC
                         " weekly   = " + result[4] + "\n" +
                         " Consumption   = " + result[5] + "\n");
 
-                logsTextView.setText("\n" + logsTextView.getText().toString() +   "\n" + "thenDoUiRelatedWork: Result " +
+                logsTextView.setText("\n" + logsTextView.getText().toString() + "\n" + " Result " +
                         "Yearly  = " + result[0] +
                         " 6 Months  = " + result[1] + "\n" +
                         " 3 Months  = " + result[2] + "\n" +
@@ -679,7 +678,7 @@ public class InAppPurchaseActivity extends AppCompatActivity implements View.OnC
 
     private void alert(String s) {
         Log.d(TAG, "alert: " + s);
-        logsTextView.setText("\n" + logsTextView.getText().toString()+   "\n"  +  "alert: " + s);
+        logsTextView.setText("\n" + logsTextView.getText().toString() + "\n" + "alert: " + s);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage(s)
                 .setPositiveButton("OK!", new DialogInterface.OnClickListener() {
